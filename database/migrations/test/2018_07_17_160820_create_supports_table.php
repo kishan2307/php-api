@@ -18,6 +18,7 @@ class CreateSupportsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('subject',100);
             $table->string('desc',1024);            
+            $table->string('answer',1024)->nullable();            
             $table->boolean('status')->default(0);            
             $table->timestamps();            
             $table->foreign('user_id')->references('id')->on('users');

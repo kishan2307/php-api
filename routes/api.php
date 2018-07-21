@@ -28,7 +28,9 @@ Route::group(['middleware' => ['api', 'authCheck']], function()
     Route::middleware('api')->post('parent/add','other\ParentCodeController@add');
     Route::middleware('api')->post('friend/list','other\ParentCodeController@list');    
 
-    
+    Route::middleware('api')->post('friend/list','other\ParentCodeController@list');  
+
+    Route::middleware('api')->post('balance/add','points\PointsController@add');    
 });
 
 Route::middleware('api')->post('apps/list','other\MoreAppsController@list');

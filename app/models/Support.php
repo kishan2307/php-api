@@ -10,7 +10,8 @@ class Support extends Model
         'user_id',
         'subject',
         'desc',
-        'status'      
+        'status',
+        'answer'      
     ];
 
     protected $hidden = [
