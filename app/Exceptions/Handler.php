@@ -66,9 +66,9 @@ class Handler extends ExceptionHandler
             return $this->errorResponse($exception->getMessage());
         }
 
-        return parent::render($request, $exception);
+        //return parent::render($request, $exception);
 
-        //return $this->errorResponse($exception->getMessage());
+        return $this->errorResponse($exception->getMessage());
     }
 
          /**

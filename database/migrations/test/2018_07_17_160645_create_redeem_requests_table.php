@@ -15,10 +15,10 @@ class CreateRedeemRequestsTable extends Migration
     {
         Schema::create('redeem_requests', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->integer('card_id')->unsigned();
-            $table->integer('points')->unsigned();
-            $table->tinyInteger('type')->default(0);
+            $table->integer('user_id')->unsigned();            
+            $table->integer('point')->unsigned();
+            $table->string('type')->default('PAYTM');
+            $table->string('number');
             $table->boolean('status')->default(0);
             $table->string('message')->nullable();
             $table->timestamps();

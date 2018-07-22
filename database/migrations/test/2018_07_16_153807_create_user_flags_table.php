@@ -21,7 +21,7 @@ class CreateUserFlagsTable extends Migration
             $table->boolean('daily_check_in')->default(0);                        
             $table->boolean('parent_code_verify')->default(0);                        
             $table->tinyInteger('quiz')->default(0);                        
-            $table->boolean('memory_quiz')->default(0);                        
+            $table->tinyInteger('memory_quiz')->default(0);                        
             $table->boolean('redoffer')->default(0);                        
             $table->tinyInteger('spin')->default(0);                        
             $table->boolean('specail_offer')->default(0); 

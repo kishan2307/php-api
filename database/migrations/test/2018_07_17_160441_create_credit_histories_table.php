@@ -15,9 +15,11 @@ class CreateCreditHistoriesTable extends Migration
     {
         Schema::create('credit_histories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->unique();
+            $table->integer('user_id')->unsigned();
+            $table->integer('point')->unsigned();
+            $table->string('type',50);
             $table->timestamps();
-            
+
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

@@ -31,6 +31,9 @@ Route::group(['middleware' => ['api', 'authCheck']], function()
     Route::middleware('api')->post('friend/list','other\ParentCodeController@list');  
 
     Route::middleware('api')->post('balance/add','points\PointsController@add');    
+    Route::middleware('api')->post('balance/redeem','points\PointsController@redeem'); 
+    Route::middleware('api')->post('balance/history','points\PointsController@balanceHistory');   
+    Route::middleware('api')->post('redeem/history','points\PointsController@history');    
 });
 
 Route::middleware('api')->post('apps/list','other\MoreAppsController@list');

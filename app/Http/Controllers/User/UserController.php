@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\User;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\ApiController;
 use App\User;
-use Illuminate\Support\Str;
+use App\Balance;
 use App\Commons;
 use App\UserFlags;
-use App\Balance;
 use App\models\Tokens;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
+use App\Http\Controllers\ApiController;
 
 
 class UserController extends ApiController
@@ -52,6 +53,7 @@ class UserController extends ApiController
             
         } catch (\Exception $e) {
             DB::rollback();
+            throw $e;
            return $this->errorResponse('Please try again, User creation Fail.');
         }
 
@@ -95,24 +97,5 @@ class UserController extends ApiController
         ];
 
         $this->validate($request, $rules);
-    }
-
-    private function getCommonParam()
-    {
-        $common = Commons::all();
-        return $this->getObj($common, '0');
-    }
-
-    private function getObj($arr, $type)
-    {
-        $temp = [];
-        if (isset($arr) && count($arr) > 0) {
-            foreach ($arr as $key => $value) {
-                if ($value->status == '1' && $value->type == $type) {
-                    $temp[$value->name] = $value->value;
-                }
-            }
-        }
-        return $temp;
-    }
+    }    
 }

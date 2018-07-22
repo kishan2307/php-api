@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class RedeemRequest extends Model
 {
 
-    protected $fillable = ['user_id','card_id','points','type','status','message'];
+    protected $fillable = ['user_id','point','number','type','status','message'];
 
     protected $hidden = [
         'id',
