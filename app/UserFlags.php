@@ -13,7 +13,9 @@ class UserFlags extends Model
     public const QUIZ = 'quiz';
     public const STATUS = 'status';
     public const MEMORY_QUIZ = 'memory_quiz';
+    public const RED_OFFER = 'redoffer';
     public const SPIN = 'spin';
+    public const SPECIAL_OFFER = 'specail_offer';
 
     protected $fillable = [
         'user_id',

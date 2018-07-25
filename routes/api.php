@@ -20,6 +20,7 @@ Route::middleware('api')->get('/user', function (Request $request) {
 
 Route::middleware('api')->post('login','User\UserController@login');
 
+
 Route::group(['middleware' => ['api', 'authCheck']], function()
 {
     Route::post('support/history','support\SupportController@history');

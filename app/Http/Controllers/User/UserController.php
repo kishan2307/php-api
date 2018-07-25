@@ -66,6 +66,7 @@ class UserController extends ApiController
         $user->token=$tokenstr;
         
         Tokens::where('user_id',$user->uid)->update(['token' => $tokenstr]);
+        User::where('id',$user->uid)->update(['login_at' => date('Y-m-d H:i:s')]);
                 
         return $this->successResponse(array(
             'user' => $user,

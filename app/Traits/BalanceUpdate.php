@@ -32,7 +32,7 @@ trait BalanceUpdate
 
         return $bl;
     }
-
+    
     protected function getCommonParam(){            
         return $value = Cache::remember('common',5, function () {
              $common = Commons::all();
